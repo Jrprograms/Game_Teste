@@ -2,14 +2,6 @@ import pygame as pg
 from pygame.locals import *
 import random
 
-
-#Anotações:
-#Colocar um foguinho saindo doss buracos lvls a frente...
-#
-#
-#
-
-
 pg.init()
 
 #cordenadas
