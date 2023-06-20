@@ -125,19 +125,19 @@ while True:
     #player
     player = pg.draw.rect(fundo_player, (255,0,0), (x,y,20,20))
 
-    #chão
+    #chao
     ground = pg.draw.rect(tela, (170,170,170), (0,300,largura,20))
 
 
-    #colisões e obstáculos(por fase):
+    #colisoes e obstaculos(por fase):
     if lvl == 0:
-        obstáculos = fase(lvl)
+        obstaculos = fase(lvl)
         if key is True:
-            if player.colliderect(obstáculos[2]):
+            if player.colliderect(obstaculos[2]):
                 lvl = 1
-        if key is False and player.colliderect(obstáculos[2]):
+        if key is False and player.colliderect(obstaculos[2]):
             key = True          
-        if player.colliderect(obstáculos[0]) or player.colliderect(obstáculos[1]):
+        if player.colliderect(obstaculos[0]) or player.colliderect(obstaculos[1]):
                 print('Game Over')
                 key = False
                 x = 20
@@ -147,20 +147,20 @@ while True:
         
 
     if lvl == 1:
-        obstáculos = fase(lvl)
+        obstaculos = fase(lvl)
         if player.colliderect(ground):
             ground_collide = True
         #obstaculos
-        if player.colliderect(obstáculos[0]) or player.colliderect(obstáculos[1]):
+        if player.colliderect(obstaculos[0]) or player.colliderect(obstaculos[1]):
             x = 20
             print('Game Over')
             key = False
         #caixa
-        if player.colliderect(obstáculos[2]):
+        if player.colliderect(obstaculos[2]):
             y = 251
             colide = True
             ground_collide = False
-        elif player.colliderect(obstáculos[3]) and ground_collide is False:
+        elif player.colliderect(obstaculos[3]) and ground_collide is False:
             y = 221
             colide = True
         else:
@@ -172,7 +172,7 @@ while True:
         
         #chegou no portal
         if key is True:
-            if player.colliderect(obstáculos[4]):
+            if player.colliderect(obstaculos[4]):
                 print("chgou aki")
                 lvl = 2
                 x = 20
@@ -181,19 +181,19 @@ while True:
                 print('next lvl')
 
         #chave
-        if player.colliderect(obstáculos[4]):
+        if player.colliderect(obstaculos[4]):
             key = True
 
 
     if lvl == 2:
-        obstáculos = fase(lvl)
+        obstaculos = fase(lvl)
         if colide is False and jumping == False:
             y = 281
 
-        #incio na animação
+        #incio na anima��o
         if animacao1 is True:
             x += 5
-            if player.colliderect(obstáculos[0]):
+            if player.colliderect(obstaculos[0]):
                 x = 20
                 animacao1 = False
         if animacao1 is False and key is False:
